@@ -1,1 +1,0 @@
-My personal nix setup
