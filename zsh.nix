@@ -38,10 +38,10 @@
   # Shell Aliases, mostly for NixOS admin
   # My aliases live in zshrc for ease
   programs.zsh.shellAliases = {
-    paru = "sudo nix-channel --update; cd /etc/nixos; sudo nix flake update; sudo nixos-rebuild dry-run";
-    switch = "sudo nixos-rebuild switch --upgrade";
-    boot = "sudo nixos-rebuild boot --upgrade";
-    validate = "cd /etc/nixos; nix flake check";
+#    paru = "sudo nix-channel --update; cd /etc/nixos; sudo nix flake update; sudo nixos-rebuild dry-run";
+#    switch = "sudo nixos-rebuild switch --upgrade";
+#    boot = "sudo nixos-rebuild boot --upgrade";
+#    validate = "cd /etc/nixos; nix flake check";
     list-gens = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
     list-packages = "nix-store -q --references /run/current-system/sw | xargs -I {} basename {} | cut -d'-' -f2-";
   };
