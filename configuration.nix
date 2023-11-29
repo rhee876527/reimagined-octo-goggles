@@ -23,13 +23,17 @@
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+ # Garnix cache service
+  nix.settings.substituters = [ "https://cache.garnix.io/" ];
+  nix.settings.trusted-substituters = [ "https://cache.garnix.io/" ];
+
   # Auto update every morning
   system.autoUpgrade.operation = "switch"; # boot is broken, doesn't jump me to latest gen!
   system.autoUpgrade.randomizedDelaySec = "12min";
   system.autoUpgrade.dates = "9:37";
   system.autoUpgrade = {
     enable = true;
-    flake = "/etc/nixos/#higashi";
+    flake = "$HOME/Documents/orchestration/#higashi";
     flags = [
       "--update-input"
       "nixpkgs"
