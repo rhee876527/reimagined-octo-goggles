@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }:
-
 {
   # All my sysctls
   boot.kernel.sysctl."dev.tty.legacy_tiocsti" = lib.mkOverride 500 0;

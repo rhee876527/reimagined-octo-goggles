@@ -33,6 +33,7 @@ with lib;
 
   # Kill coredumps
   systemd.coredump.enable = false;
+  systemd.coredump.extraConfig = [ "Storage=none" ]; # still get occasional dumps even with above option
   
   # Disable boot entries editing
   boot.loader.systemd-boot.editor = false;
@@ -89,6 +90,9 @@ with lib;
     "sysv"
     "ufs"
   ];
+
+  # Make sure coredump is never accidentally triggered
+  boot.kernel.sysctl."kernel.core_pattern" = mkOverride 500 "/dev/null";
 
   # Restrict ptrace() usage to processes with a pre-defined relationship
   # (e.g., parent/child)
