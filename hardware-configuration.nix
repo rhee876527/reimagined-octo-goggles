@@ -21,9 +21,8 @@
   security.tpm2.pkcs11.enable = true;  # expose /run/current-system/sw/lib/libtpm2_pkcs11.so
   security.tpm2.tctiEnvironment.enable = true;  # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables  
 
-  # Whatever kernel is well updated and/or optimized for desktop
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # Only regularly updated kernel in stable I guess... 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   
   # My snowflake boot params 
   boot.kernelParams = [ 
