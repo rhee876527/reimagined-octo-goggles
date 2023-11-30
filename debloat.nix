@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
  {
   # Debloat GNOME  
   environment.gnome.excludePackages = (with pkgs; [
@@ -25,7 +24,7 @@
   eog
   gnome-shell-extensions
   sushi
-  totem
+  #totem #we want thumbnails for video in nautilus
   file-roller
   gnome-contacts   
   gnome-online-miners
