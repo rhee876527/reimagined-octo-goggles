@@ -10,6 +10,7 @@
 #      firefox #came default
       gnomeExtensions.gsconnect # normal install doesn't launch in 23.05
       croc
+      ffmpegthumbnailer # maybe fix issue with video thumbnails not being created
       #noto-fonts-cjk
       #noto-fonts-emoji
       webp-pixbuf-loader #for webp files      
@@ -23,8 +24,7 @@
       sbctl
       niv
       unstable.flatpak # just coz we like bleeding edge
-      unstable.git
-      #bfg-repo-cleaner
+      unstable.git # preempt unresolved git issues maybe
       wget
       xorg.xlsclients
       tpm-tools
@@ -37,7 +37,7 @@
       playerctl
       unstable.scrcpy #scrcpy too old (2.0), doesn't have --no-video yet
       tealdeer
-      libsecret #keepass unlocker
+      libsecret 
       python311Packages.pipx #pipx
     ];
   };
