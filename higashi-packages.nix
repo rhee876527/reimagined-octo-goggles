@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
-
 {
-# Define a user account. Don't forget to set a password with ‘passwd’.
+# Define a user account.
   users.users.higashi = {
     isNormalUser = true;
     description = "Mantic Minotaur";
@@ -10,7 +9,6 @@
 #      firefox #came default
       gnomeExtensions.gsconnect # normal install doesn't launch in 23.05
       croc
-      ffmpegthumbnailer # maybe fix issue with video thumbnails not being created
       #noto-fonts-cjk
       #noto-fonts-emoji
       webp-pixbuf-loader #for webp files      
