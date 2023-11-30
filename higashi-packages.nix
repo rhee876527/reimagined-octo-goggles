@@ -23,7 +23,8 @@
       sbctl
       niv
       unstable.flatpak # just coz we like bleeding edge
-      git
+      unstable.git
+      #bfg-repo-cleaner
       wget
       xorg.xlsclients
       tpm-tools
