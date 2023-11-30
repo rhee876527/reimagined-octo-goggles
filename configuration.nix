@@ -33,7 +33,7 @@
   system.autoUpgrade.dates = "9:37";
   system.autoUpgrade = {
     enable = true;
-    flake = "$HOME/Documents/orchestration/#higashi";
+    flake = "/home/higashi/Documents/orchestration/#higashi";
     flags = [
       "--update-input"
       "nixpkgs"
