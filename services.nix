@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 {
-# Enable the OpenSSH daemon. 
-  services.openssh.enable = true; #Defaults are secure-enough
+# Enable the OpenSSH daemon. #Defaults are not secure-enough
+  services.openssh = {
+  enable = true;
+  # require public key authentication for better security
+  settings.PasswordAuthentication = false;
+  settings.PermitRootLogin = "no";
+  };
 
 # Disable boltd
   systemd.services.bolt.enable = false;
