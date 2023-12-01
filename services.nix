@@ -12,6 +12,7 @@
   systemd.services.bolt.enable = false;
 
 # Open firewall for kde/gsconnect as specified in programs
+# https://github.com/NixOS/nixpkgs/issues/116388
   programs.kdeconnect.enable = true;
 
 # Thermald
