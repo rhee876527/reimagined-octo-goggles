@@ -11,6 +11,8 @@
 # Disable boltd
   systemd.services.bolt.enable = false;
 
+# Open firewall for kde/gsconnect as specified in programs
+  programs.kdeconnect.enable = true;
 
 # Thermald
   services.thermald.enable = true;

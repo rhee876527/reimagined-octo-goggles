@@ -21,7 +21,7 @@
       htop
       sbctl
       niv
-      unstable.flatpak # just coz we like bleeding edge
+      flatpak 
       unstable.git # preempt unresolved git issues maybe
       wget
       xorg.xlsclients
@@ -44,7 +44,6 @@
   environment.shellInit = ''
     export PATH=$HOME/.local/bin:$PATH
   '';
-
 
 # No PASSWORD SUDO !!!
   security.sudo.extraRules = [
