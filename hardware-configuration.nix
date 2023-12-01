@@ -23,6 +23,7 @@
 
   # Only regularly updated kernel in stable I guess... 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_6_5; #if we need to downgrade
   
   # My snowflake boot params 
   boot.kernelParams = [ 
