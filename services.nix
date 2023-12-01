@@ -3,6 +3,10 @@
 # Enable the OpenSSH daemon. 
   services.openssh.enable = true; #Defaults are secure-enough
 
+# Disable boltd
+  systemd.services.bolt.enable = false;
+
+
 # Thermald
   services.thermald.enable = true;
 
