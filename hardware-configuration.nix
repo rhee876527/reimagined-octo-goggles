@@ -60,10 +60,10 @@
       options = [ "noatime" "X-fstrim.notrim" "commit=120" "discard=async" "compress=zstd:6" "nosuid" "nossd" "nodev" "nofail" "x-gvfs-show" "autodefrag" ];
     };  
 
-  # BFQ
+  # Kyber
   services.udev.extraRules = ''
-    ACTION=="add|change", KERNEL=="sd[a-z]*|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="bfq"
-    ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
+    ACTION=="add|change", KERNEL=="sd[a-z]*|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="kyber"
+    ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="kyber"
   '';
 
   # BTRFS Scrub
@@ -112,6 +112,6 @@
     ];
   };
 
-  # Switch from powersave to schedutil
+  # Switch from performance to schedutil
   powerManagement.cpuFreqGovernor = "schedutil";
 }
