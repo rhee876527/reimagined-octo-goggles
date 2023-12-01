@@ -13,6 +13,9 @@
     plugins = [ "git" "docker-compose" ];
 #    theme = "awesomepanda"; #superceded by p10k which is not in default options
   };
+  
+  # Manage oh-my-zsh custom
+  programs.zsh.ohMyZsh.custom = "/home/higashi/.oh-my-zsh/custom";
     
   # p10k
   programs.zsh.shellInit = ''
