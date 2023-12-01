@@ -24,8 +24,9 @@
   # Whichever working kernel is latest and/or optimized  
   #boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.kernelPackages = pkgs.linuxPackages_6_5; #if we need to downgrade
-  boot.kernelPackages = pkgs.linuxPackages_lqx;  
-
+  #boot.kernelPackages = pkgs.linuxPackages_lqx;  
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+   
   # My snowflake boot params 
   boot.kernelParams = [ 
 "quiet" "splash" "loglevel=3" "udev.log_level=3" "systemd.show_status=false" 
