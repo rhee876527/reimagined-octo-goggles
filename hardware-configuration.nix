@@ -21,10 +21,11 @@
   security.tpm2.pkcs11.enable = true;  # expose /run/current-system/sw/lib/libtpm2_pkcs11.so
   security.tpm2.tctiEnvironment.enable = true;  # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables  
 
-  # Only regularly updated kernel in stable I guess... 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Whichever working kernel is latest and/or optimized  
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.kernelPackages = pkgs.linuxPackages_6_5; #if we need to downgrade
-  
+  boot.kernelPackages = pkgs.linuxPackages_lqx;  
+
   # My snowflake boot params 
   boot.kernelParams = [ 
 "quiet" "splash" "loglevel=3" "udev.log_level=3" "systemd.show_status=false" 
