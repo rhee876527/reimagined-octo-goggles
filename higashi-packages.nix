@@ -7,7 +7,7 @@
     extraGroups = [ "networkmanager" "wheel" "tss" "docker"];
     packages = with pkgs; [
 #      firefox #came default
-      gnomeExtensions.gsconnect # normal install doesn't launch in 23.05
+# moved to system-packages because of enabled service      gnomeExtensions.gsconnect # normal install doesn't launch in 23.05
       croc
       #noto-fonts-cjk
       #noto-fonts-emoji
