@@ -22,7 +22,7 @@
       sbctl
       niv
       flatpak 
-      unstable.git # preempt unresolved git issues maybe
+      unstable.git # bleeding git
       wget
       xorg.xlsclients
       tpm-tools

@@ -42,23 +42,11 @@
   };
   # Tame hungry updates nix daemon
   nix.daemonCPUSchedPolicy = "idle";
-#  nix.daemonIOSchedPriority = 7;
-
-  # OOMD & Slices
-  systemd.oomd.enableRootSlice = true;
-  systemd.oomd.enableSystemSlice = true;
-  systemd.oomd.enableUserServices = true;
-  # TO DO!! per-slice settings 
-  # https://src.fedoraproject.org/rpms/systemd/blob/rawhide/f/10-oomd-per-slice-defaults.conf
+  nix.daemonIOSchedPriority = 6;
    
   # Limit the number of generations to keep
   boot.loader.systemd-boot.configurationLimit = 10; #seems lanzaboot breaks this or feature is not clear to me
   # boot.loader.grub.configurationLimit = 10;
-  
-  # Reduce default timeout
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
 
   # plymouth & quiet boot
   boot.plymouth.enable = true;
@@ -68,7 +56,6 @@
   boot.consoleLogLevel = 0;  
   boot.initrd.verbose = false;
 
-
   # Perform garbage collection weekly  
   nix.gc = {
     automatic = true;
@@ -76,8 +63,7 @@
     options = "--delete-older-than 1w";
   };
 
-  # Optimize storage
-  # You can also manually optimize the store via:
+  # Optimize storage You can also manually optimize the store via:
   #    nix-store --optimise
   nix.settings.auto-optimise-store = true;  
 
@@ -139,8 +125,7 @@
     #jack.enable = true;
   };
 
-  # Keyring won't allow us to do autologin cleanly!!
-  # Enable automatic login for the user.
+  # Enable automatic login for the user.  #Keyring won't allow us to do autologin cleanly!!
   #services.xserver.displayManager.autoLogin.enable = true;
   #services.xserver.displayManager.autoLogin.user = "higashi";
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229

@@ -10,34 +10,31 @@
   # Enable Oh-my-zsh
   programs.zsh.ohMyZsh = {
     enable = true;
-    plugins = [ "git" "docker-compose" ];
-#    theme = "awesomepanda"; #superceded by p10k which is not in default options
   };
   
-  # Manage oh-my-zsh custom
+  # Switch to my oh-my-zsh custom
   programs.zsh.ohMyZsh.custom = "/home/higashi/.oh-my-zsh/custom";
     
-  # p10k
+  # Custom plugins/themes
   programs.zsh.shellInit = ''
+    # p10k theme
     source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
     source $HOME/.p10k.zsh
+    # Plugins
+    source $HOME/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
+    source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
   '';    
 
   # More ZSH customizations
-  programs.zsh.enableCompletion = true;
-  programs.zsh.autosuggestions.enable = true;
-  programs.zsh.syntaxHighlighting.enable = true;
-  programs.zsh.autosuggestions.async = true;
   programs.zsh.setOptions = [
   "HIST_IGNORE_DUPS"
   "SHARE_HISTORY"
   "HIST_FCNTL_LOCK"
   "INC_APPEND_HISTORY_TIME"
   ];
-  programs.zsh.autosuggestions.strategy = [
-  "history" "completion"
-  ];
-
+  
   # Shell Aliases, mostly for NixOS admin
   # My aliases live in zshrc for ease
   programs.zsh.shellAliases = {

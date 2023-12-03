@@ -30,7 +30,7 @@
   boot.kernelParams = [ 
 "quiet" "splash" "loglevel=3" "udev.log_level=3" "systemd.show_status=false" 
 "mce=off" "nowatchdog" 
-"cpuidle.governor=teo" 
+"cpuidle.governor=teo" # Not activated since most kernels have: CONFIG_CPU_IDLE_GOV_TEO is not set
 "resume=UUID=0e841e14-17fb-4d4c-b186-7fd24daba099" "resume_offset=3679488" 
 "module.sig_enforce=1" 
 "pcie_aspm=force" 
@@ -76,9 +76,7 @@
   users.users.higashi.extraGroups = ["adbusers"];
 
   # Wake-on-WLAN service
-  environment.systemPackages = with pkgs; [
-  iw
-  ];
+  environment.systemPackages = with pkgs; [ iw ];
   systemd.services.wol-wlp2s0 = {
     enable = true;
     description = "Wake-on-WAN for %i";

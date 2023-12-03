@@ -21,11 +21,11 @@ with lib;
 
 #  nix.settings.allowed-users = mkDefault [ "@users" ];
   
-  # scudo runs like shit, hates ff & dzr
+  # okay but hates native firefox & bash scripts for dzr
 #  environment.memoryAllocator.provider = mkDefault "scudo";
 #  environment.variables.SCUDO_OPTIONS = mkDefault "ZeroContents=1";
 
-  # optional if scudo effs up
+  # general use *almost everything works
   environment.memoryAllocator.provider = mkDefault "graphene-hardened";  
 
   # apparmor
@@ -33,7 +33,7 @@ with lib;
 
   # Kill coredumps
   systemd.coredump.enable = false;
-  systemd.coredump.extraConfig = [ "Storage=none" ]; # still get occasional dumps even with above option
+  systemd.coredump.extraConfig = [ "Storage=none" ]; 
   
   # Disable boot entries editing
   boot.loader.systemd-boot.editor = false;
@@ -53,12 +53,7 @@ with lib;
 
   # We'll disable this section as our flags are sorta okay already
 #  boot.kernelParams = [
-    # Slab/slub sanity checks, redzoning, and poisoning
-#    "slub_debug=FZP"
-    # Overwrite free'd memory
-    #"page_poison=1"
-    # Enable page allocator randomization
-    #"page_alloc.shuffle=1"
+#  ..................
 #  ];
 
   boot.blacklistedKernelModules = [
