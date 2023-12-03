@@ -31,6 +31,7 @@
   system.autoUpgrade.operation = "switch"; # boot is broken, doesn't jump me to latest gen!
   system.autoUpgrade.randomizedDelaySec = "12min";
   system.autoUpgrade.dates = "9:37";
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-23.11"; # zoom to 23.11
   system.autoUpgrade = {
     enable = true;
     flake = "/home/higashi/Documents/orchestration/#higashi";

@@ -34,8 +34,8 @@
 # Thermald
   services.thermald.enable = true;
 
-# To be added in 23.11
-  #services.preload.enable = true; 
+# Preload
+  services.preload.enable = true; 
 
 # Flatpak
   services.flatpak.enable = true;

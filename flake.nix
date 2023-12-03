@@ -13,7 +13,7 @@
 
     # Official NixOS package source, using nixos-unstable branch here
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     # HOW TO UPGRADE SINGLE PACKAGE TO UNSTABLE
     # from this chad: https://old.reddit.com/r/NixOS/comments/klbuu2/unstable_packages_in_configurationnix_using_flakes/
